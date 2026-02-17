@@ -1,0 +1,18 @@
+{
+  "name": "snapshotfinder",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "esbuild src/main.ts --bundle --outfile=dist/main.js --minify --sourcemap && cpy src/index.html dist",
+    "preview": "npx http-server dist -p 8080"
+  },
+  "devDependencies": {
+    "esbuild": "^0.18.22",
+    "cpy-cli": "^3.1.1",
+    "rimraf": "^5.0.0",
+    "http-server": "^14.1.1"
+  }
+}
+
